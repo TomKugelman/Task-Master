@@ -8,3 +8,17 @@ table.center {
     margin-left:auto; 
     margin-right:auto;
 }
+
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.form, input {
+    margin-top: 10px;
+    height: auto;
+}
