@@ -5,7 +5,7 @@
 
 > Languages: Python with Flask, CSS/HTML, deployed with Heroku. .
 
-> Webapp: <a style="color: Green;" href="https://taskmastercrudappwithflask.herokuapp.com/"><strong>Link to WebApp</strong></a>
+> Webapp: <a style="color: Green;" href="https://taskmastercrudappwithflask.herokuapp.com/"><strong>Link to WebApp</strong></a> // Middle Mouse click to open in new tab
 
 ## Description
 This web app allows the user to maintain a task list; providing functionality to create, update, and delete tasks. Tasks are stored within an SQLite local database.
