@@ -3,9 +3,9 @@
 
 > Date Created: June, 2020
 
-> Languages: Python using Flask, deployed with Heroku. CSS/HTML.
+> Languages: Python with Flask, CSS/HTML, deployed with Heroku. .
 
-> Webapp: https://taskmastercrudappwithflask.herokuapp.com/
+> Webapp: <a style="color: Green;" href="https://taskmastercrudappwithflask.herokuapp.com/"><strong>Link to WebApp</strong></a> // Middle Mouse click to open in new tab
 
 ## Description
 This web app allows the user to maintain a task list; providing functionality to create, update, and delete tasks. Tasks are stored within an SQLite local database.
@@ -16,7 +16,7 @@ This program uses Flask as a web framework and is deployed using Heroku.
 My goal with this project was to create an app that can potentially increase my productivity. I love the idea of Kanban and Trello Boards and I figured it would be fun to start small and try to build my own version of those organization tools.
 
 ### What I learned
-While building this project I learned a myriad of things along the way. My exposure to HTML and CSS has been pretty limited thus far. Completing the basic framework for this project has allowed me to gain some experience using web developer tools like HTML, CSS, and Flask. 
+While building this project I learned a myriad of things along the way. My exposure to HTML and CSS has been pretty limited thus far. Completing the basic framework for this project has allowed me to gain some experience using web development tools like HTML, CSS, and Flask. 
 
 ### Roadmap
 As this project is something I want to use regularly to increase my own productivity, I want to add features to make the experience better and more robust.
@@ -35,4 +35,4 @@ These are outside the scope of this current project goals and may not be impleme
 
 - Ability to create and maintain multiple projects like "Housework", "Project_A", "Hobby_Goals"
 - Beautify the app. A basic CRUD app isn't particularly interesting to look at. I want to add interesting visual elements to make it easier on the eyes. This also includes audio ques when updating a task. Auditory stimulus can send dopamine to the brain and increase the desire to be productive.
-- Allows other users to create and manage their own task boards. Currently the database is shared among any user of the app. This is not ideal, although a collaborative feature would be interesting.
+- Allow other users to create and manage their own task boards. Currently the database is shared between every user. This is not ideal, although a collaborative feature would be interesting.
