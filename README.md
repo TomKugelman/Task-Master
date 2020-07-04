@@ -3,7 +3,7 @@
 
 > Date Created: June, 2020
 
-> Languages: Python with Flask, CSS/HTML, deployed with Heroku. .
+> Languages: Python with Flask, CSS/HTML, deployed with Heroku.
 
 > Webapp: <a style="color: Green;" href="https://taskmastercrudappwithflask.herokuapp.com/"><strong>Link to WebApp</strong></a> // Middle Mouse click to open in new tab
 
