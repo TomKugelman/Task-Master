@@ -1,7 +1,6 @@
 import os
 import json
 import requests
-import config
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import (
