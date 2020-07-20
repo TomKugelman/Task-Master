@@ -27,8 +27,8 @@ app.json_encoder = JSONEncoder
 app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
 
 # Stored in config file and noted by .gitignore
-GOOGLE_CLIENT_ID = config.GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET = config.GOOGLE_CLIENT_SECRET
+GOOGLE_CLIENT_ID = os.environ.get(GOOGLE_CLIENT_ID)
+GOOGLE_CLIENT_SECRET = os.environ.get(GOOGLE_CLIENT_SECRET)
 GOOGLE_DISCOVERY_URL = (
     "https://accounts.google.com/.well-known/openid-configuration"
 )
