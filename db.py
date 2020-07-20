@@ -59,6 +59,15 @@ class User(UserMixin, Base):
         result = session.query(User).get(user_id)
         user = User(result.id, result.name, result.email)
         return user
+    
+    def is_authenticated():
+        return True
+    
+    def is_active():
+        return True
+    
+    def is_anonymous():
+        return False
         
 class Tasks(Base):
     __tablename__ = "tasks"
