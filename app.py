@@ -15,6 +15,7 @@ from oauthlib.oauth2 import WebApplicationClient
 from datetime import datetime
 from db import User, Tasks, Add_Entry, Delete, Check, JSONEncoder, session
 
+
 db = session
 
 # Path references for templates (HTML) and static (CSS) folders
@@ -146,7 +147,7 @@ def logout():
 # Actual service
 
 @app.route('/homepage', methods=['POST', 'GET'])
-@app.route('/homepage/<tasks>', methods=['POST', 'GET'])
+@app.route('/homepage/<tasks><user>', methods=['POST', 'GET'])
 def homepage():
     if request.method == 'POST':
         task_content = request.form['content']
@@ -184,7 +185,7 @@ def update(id):
 # Just so I don't have to query the database within each function EVERY time I wanna return to the homepage
 def return_to_home():
     tasks = db.query(Tasks).filter(Tasks.user_id == current_user.id).order_by(Tasks.date_created).all()
-    return render_template('homepage.html', tasks=tasks)
+    return render_template('homepage.html', tasks=tasks, user=current_user)
 
 if __name__ == "__main__":
-    app.run(ssl_context = "adhoc", debug=False) 
+    app.run(ssl_context = "adhoc", debug=True) 
