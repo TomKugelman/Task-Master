@@ -50,6 +50,7 @@ class User(UserMixin, Base):
         self.id = id
         self.name = name
         self.email = email
+        self.active = True
 
     def asdict(self):
         return {'id': self.id, 'name': self.name, 'email': self.email}
@@ -60,14 +61,17 @@ class User(UserMixin, Base):
         user = User(result.id, result.name, result.email)
         return user
     
-    def is_authenticated():
+    def is_authenticated(self):
         return True
     
-    def is_active():
-        return True
+    def is_active(self):
+        return self.active
     
-    def is_anonymous():
+    def is_anonymous(self):
         return False
+    
+    def get_id(self):
+        return self.id
         
 class Tasks(Base):
     __tablename__ = "tasks"
