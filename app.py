@@ -24,7 +24,7 @@ STATIC_DIR = os.path.abspath('./static')
 
 app = Flask('Task Master', template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 app.json_encoder = JSONEncoder
-app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
+app.secret_key = os.environ.get("SECRET_KEY")
 
 # Stored in config file and noted by .gitignore
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
@@ -101,16 +101,11 @@ def callback():
     # Parse the tokens!
     client.parse_request_body_response(json.dumps(token_response.json()))
 
-    # Now that we have tokens (yay) let's find and hit URL
-    # from Google that gives you user's profile information,
-    # including their Google Profile Image and Email
     userinfo_endpoint = google_provider_cfg["userinfo_endpoint"]
     uri, headers, body = client.add_token(userinfo_endpoint)
     userinfo_response = requests.get(uri, headers=headers, data=body)
 
-    # We want to make sure their email is verified.
-    # The user authenticated with Google, authorized our
-    # app, and now we've verified their email through Google!
+    # Verify email
     if userinfo_response.json().get("email_verified"):
         unique_id = userinfo_response.json()["sub"]
         users_email = userinfo_response.json()["email"]
@@ -126,9 +121,6 @@ def callback():
 
     # Doesn't exist? Add to database
     if Check(user.id) == False:
-        print("------------")
-        print("good")
-        print()
         Add_Entry(user)
 
     # Begin user session by logging the user in
